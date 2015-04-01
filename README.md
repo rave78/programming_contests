@@ -1,0 +1,1 @@
+My goal is to code all the problems suggested in the book Competitive Programming (first edition) in order to improve my C++ skills.
