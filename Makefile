@@ -1,19 +1,13 @@
-all: uva100 uva272 uva394 uva483 uva573
+SOLUTIONS := $(subst uva, solution, $(wildcard uva*))
 
-uva100: 
-	    g++ Uva100/solution100.cpp -o solution100
+.PHONY: all
 
-uva272: 
-	    g++ Uva272/solution272.cpp -o solution272
-	    
-uva394: 
-	    g++ Uva394/solution394.cpp -o solution394
+all: $(SOLUTIONS)
+	@echo 'Done'
 
-uva483: 
-	    g++ Uva483/solution483.cpp -o solution483
+solution%:  
+	g++ $(subst solution, uva, $@)/$@.cpp -o $@ 
 
-uva573: 
-	    g++ Uva573/solution573.cpp -o solution573
 
 clean:
-		rm solution*
+	@rm -v $(SOLUTIONS)
